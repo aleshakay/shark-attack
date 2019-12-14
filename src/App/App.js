@@ -1,16 +1,29 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.scss';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import studentData from '../helpers/data/studentData';
+import SharkTank from '../components/SharkTank/SharkTank';
 
-function App() {
+class App extends React.Component {
+  state = {
+    students:[],
+  }
+  
+  componentDidMount() {
+    const students = studentData.getStudents();
+    this.setState(( students ));
+  }
+  
+  render() {
   return (
     <div className="App">
       <header className="App-header">
         <button className='btn btn-primary'>Shark</button>
+        <SharkTank students={this.state.students} />
       </header>
     </div>
   );
+  }
 }
 
 export default App;

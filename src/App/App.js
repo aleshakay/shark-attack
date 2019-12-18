@@ -11,7 +11,14 @@ class App extends React.Component {
   
   componentDidMount() {
     const students = studentData.getStudents();
+    console.log(students)
     this.setState(( students ));
+  }
+
+  SoFarSoGood = (studentId) => {
+    studentData.livingStudents(studentId);
+    const students = studentData.getStudents();
+    this.setState({ students });
   }
   
   render() {
@@ -19,7 +26,7 @@ class App extends React.Component {
     <div className="App">
       <header className="App-header">
         <button className='btn btn-primary'>Shark</button>
-        <SharkTank students={this.state.students} />
+        <SharkTank student={this.state.students} SoFarSoGood={this.SoFarSoGood} />
       </header>
     </div>
   );

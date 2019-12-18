@@ -141,12 +141,14 @@ const students = [
 
 const getStudents = () => students;
 
-const livingStudents = (studentId) => {
-  students.forEach((response) => {
-    if (response.id === studentId) {
-      response.isDead = false
-    }
-  });
-};
+const livingStudents = () => {
+  let liveStudent = {};
+  students.forEach((student) => {
+    if (student.isDead === 'false')
+    liveStudent =+ student;
+    })
+    return liveStudent;
+  };
+
 
 export default { getStudents, livingStudents };

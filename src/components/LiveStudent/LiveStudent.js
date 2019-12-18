@@ -28,7 +28,7 @@ class LiveStudent extends React.Component {
         </div>
       </div>
     );
-  };
+  }
 }
 
 export default LiveStudent;

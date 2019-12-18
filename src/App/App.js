@@ -6,13 +6,12 @@ import SharkTank from '../components/SharkTank/SharkTank';
 
 class App extends React.Component {
   state = {
-    students:[],
+    students: [],
   }
-  
+
   componentDidMount() {
     const students = studentData.getStudents();
-    console.log(students)
-    this.setState(( students ));
+    this.setState({ students });
   }
 
   SoFarSoGood = (studentId) => {
@@ -20,16 +19,16 @@ class App extends React.Component {
     const students = studentData.getStudents();
     this.setState({ students });
   }
-  
+
   render() {
-  return (
+    return (
     <div className="App">
       <header className="App-header">
         <button className='btn btn-primary'>Shark</button>
         <SharkTank student={this.state.students} SoFarSoGood={this.SoFarSoGood} />
       </header>
     </div>
-  );
+    );
   }
 }
 

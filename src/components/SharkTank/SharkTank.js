@@ -10,17 +10,16 @@ class SharkTank extends React.Component {
     student: PropTypes.arrayOf(studentShape.studentShape),
     SoFarSoGood: PropTypes.func,
   }
-  
+
   render() {
     const { student } = this.props;
     const { SoFarSoGood } = this.props;
     const studentCards = student.map((x) => <LiveStudent key={x.id} student={x} SoFarSoGood={SoFarSoGood} />);
-    console.log(studentCards)
     return (
       <div className="SharkTank">
       {studentCards}
       </div>
-    )
+    );
   }
 }
 

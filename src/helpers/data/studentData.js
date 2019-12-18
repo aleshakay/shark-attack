@@ -142,13 +142,14 @@ const students = [
 const getStudents = () => students;
 
 const livingStudents = () => {
-  let liveStudent = {};
+  const liveStudent = [];
   students.forEach((student) => {
-    if (student.isDead === 'false')
-    liveStudent =+ student;
-    })
-    return liveStudent;
-  };
+    if (student.isDead === false) {
+      liveStudent.push(student);
+    }
+  });
+  return liveStudent;
+};
 
 
 export default { getStudents, livingStudents };

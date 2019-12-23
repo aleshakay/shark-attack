@@ -123,7 +123,7 @@ const students = [
     id: 'student21',
     firstName: 'Monica',
     lastName: 'Djunaidi',
-    isDead: false,
+    isDead: true,
   },
   {
     id: 'student22',
@@ -150,6 +150,18 @@ const livingStudents = () => {
   });
   return liveStudent;
 };
+const dearlyBeloved = () => {
+  const deadStudent = [];
+  students.forEach((student) => {
+    if (student.isDead === true) {
+      deadStudent.push(student);
+    }
+  });
+  return deadStudent;
+};
 
-
-export default { getStudents, livingStudents };
+export default {
+  getStudents,
+  livingStudents,
+  dearlyBeloved,
+};

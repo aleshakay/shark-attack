@@ -8,17 +8,6 @@ class Student extends React.Component {
     student: studentShape.studentShape,
   }
 
-  SoFarSoGoodEvent = (e) => {
-    const { SoFarSoGood, student } = this.props;
-    e.preventDefault();
-    SoFarSoGood(student.id);
-  }
-
-  NoLongerSoGoodEvent = (e) => {
-    const { NoLongerSoGood, student } = this.props;
-    e.preventDefault();
-    NoLongerSoGood(student.id);
-  }
 
   render() {
     const { student } = this.props;
@@ -39,7 +28,7 @@ class Student extends React.Component {
     };
 
     return (
-      <div className ="card col- m-2">
+      <div className ="card">
         {statusOfStudent(student)}
         <div className ="card-body">
           <h5 className ="card-text">{student.firstName}</h5>

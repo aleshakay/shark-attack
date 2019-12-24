@@ -8,6 +8,7 @@ import Graveyard from '../components/Graveyard/Graveyard';
 class App extends React.Component {
   state = {
     students: [],
+    deadStudents: [],
   }
 
   componentDidMount() {
@@ -15,13 +16,22 @@ class App extends React.Component {
     this.setState({ students });
   }
 
+  randomPicker = () => {
+    const students = studentData.livingStudents();
+    const deadStudents = studentData.dearlyBeloved();
+    const studentNum = Math.floor(Math.random() * students.length);
+    const studentId = students[studentNum].id;
+    studentData.followTheLight(studentId);
+    this.setState({ students, deadStudents });
+  }
 
   render() {
     return (
     <div className="App">
       <header className="App-header">
-        <button className='btn btn-primary'>Shark</button>
+        <button className='btn btn-primary'> SHARK ATTACK </button>
         <SharkTank student={this.state.students} />
+        <Graveyard student={this.state.deadStudents} />
         </header>
     </div>
     );

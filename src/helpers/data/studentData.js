@@ -15,7 +15,7 @@ const students = [
     id: 'student3',
     firstName: 'Ashley',
     lastName: 'Claiborne',
-    isDead: false,
+    isDead: true,
   },
   {
     id: 'student4',
@@ -160,8 +160,14 @@ const dearlyBeloved = () => {
   return deadStudent;
 };
 
+const followTheLight = (studentId) => {
+  const findTheStudent = livingStudents().find((student) => student.id === studentId);
+  findTheStudent.isDead = true;
+};
+
 export default {
   getStudents,
   livingStudents,
   dearlyBeloved,
+  followTheLight,
 };

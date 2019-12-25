@@ -161,7 +161,7 @@ const dearlyBeloved = () => {
 };
 
 const followTheLight = (studentId) => {
-  const findTheStudent = livingStudents().find((student) => student.id === student);
+  const findTheStudent = livingStudents().find((student) => student.id === studentId);
   findTheStudent.isDead = true;
 };
 

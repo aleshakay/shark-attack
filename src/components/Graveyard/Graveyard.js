@@ -11,10 +11,10 @@ class Graveyard extends React.Component {
 
   render() {
     const { deadStudents } = this.props;
-    const studentCards = deadStudents.map((x) => <GraveStone key={x.id} deadStudents={x} />);
+    const studentCards = deadStudents.map((deadStudent) => <GraveStone key={deadStudent.id} deadStudent={deadStudent} />);
     return (
-      <div className="Graveyard col-5">
-        <h2>Grave yard</h2>
+      <div className="Graveyard container">
+        <div><h2 className="xs=6">Graveyard</h2></div>
         <div className="row mx-auto">
           {studentCards}
         </div>

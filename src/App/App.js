@@ -13,7 +13,8 @@ class App extends React.Component {
 
   componentDidMount() {
     const students = studentData.getStudents();
-    this.setState({ students });
+    const deadStudents = studentData.dearlyBeloved();
+    this.setState({ students, deadStudents });
   }
 
   randomPicker = () => {
@@ -28,11 +29,10 @@ class App extends React.Component {
   render() {
     return (
     <div className="App">
-      <header className="App-header">
-        <button className='btn btn-primary'> SHARK ATTACK </button>
-        <SharkTank student={this.state.students} />
-        <Graveyard student={this.state.deadStudents} />
-        </header>
+        <SharkTank student={this.state.students} randomPicker={this.randomPicker}/>
+      <div className="TryThis">
+        <Graveyard deadStudents={this.state.deadStudents} />
+        </div>
     </div>
     );
   }

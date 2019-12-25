@@ -1,6 +1,12 @@
 .SharkTank{
-  background-color:#006994  ;
+  flex-direction: column;
+  background-image: url('../../images/shark_attack.jpg');
+
 }
 .row{
   display: flew-wrap !important;
+}
+
+.card{
+  background-color:rgb(94, 196, 221);
 }

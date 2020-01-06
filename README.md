@@ -1,4 +1,12 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Shark Attack
+
+## Description
+This application is an listing of all the classmates at NSS.  Using React, Javascript, Components, Bootstrap and JSX one classmate is randomly expelled from the Shark tank using a function and placed in the Graveyard.
+## ScreenShots
+
+
+## Technologies Used
+React, HTML, BootStrap, CSS, Git
 
 ## Available Scripts
 
